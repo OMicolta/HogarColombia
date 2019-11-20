@@ -4,13 +4,13 @@
       <a routerLink="/home" class="brand-logo">Hogar Colombia</a>
       <a href="#" data-target="mobile-hogar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/security/login">Login</a></li>
-        <li><a routerLink="/security/logout">Logout</a></li>
+        <li *ngIf="!userLogged"><a routerLink="/security/login">Login</a></li>
+        <li *ngIf="userLogged"><a routerLink="/security/logout">Logout</a></li>
       </ul>
     </div>
   </nav>
 
   <ul class="sidenav" id="mobile-hogar">
-    <li><a routerLink="/security/login">Login</a></li>
-    <li><a routerLink="/security/logout">Logout</a></li>
+    <li *ngIf="!userLogged"><a routerLink="/security/login">Login</a></li>
+    <li *ngIf="userLogged"><a routerLink="/security/logout">Logout</a></li>
   </ul>
